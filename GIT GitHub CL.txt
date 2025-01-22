@@ -1,0 +1,73 @@
+clone: is download with reference (.git)
+
+##setup##
+
+Git config --global user.name "Username"
+Git config --global user.email  "Email"
+
+
+##Main CL in GIT##
+
+git init                              ==============> initialize git to Folder [.git folder].
+git status                            ==============> tell me the status of Files on the Project File. 
+ --> On branch [----]
+ --> Commit [----]
+ --> untracked files: [---- ----- ----]
+ --> status
+
+git status -s                         ==============> status of Every file.
+git add .                             ==============> add files to staging area, can use [FileName, . , *.js]
+git commit -m "comment"               ==============> add files to repo. 
+git commit -am "comment"              ==============> Automatically stages all modified and deleted files (but not new, untracked files).
+git commit -amend "comment"           ==============> stages all modified and deleted files to the last commit (doesn't create new one).
+git ls-files                          ==============> see every file in the staging area.
+git rm -f [fileName]                  ==============> removing file from local and stagging area.
+git rm --cached [fileName]            ==============> removing file from stagging area only. [add --cached -r on removing folder]
+git mv [fileName] [location]          ==============> moving file to new dictate in local and stagging area . [if give it new name not location it will rename it].
+git log --all                         ==============> give me list of all commit with detailes. [Show all commit Regardless The HEAD Place].
+git log                               ==============> give me list of all commit with detailes. [Show all commit Regarding to The HEAD Place].
+git log --oneline --all               ==============> give me list of all commit on one line. [Show all commit Regardless The HEAD Place].
+git log --oneline                     ==============> give me list of all commit on one line. [Show all commit Regarding The HEAD Place].
+git show [commitShortName]            ==============> show me all changes.
+git checkout [commitShortName]        ==============> but the HEAD to [commitShortName] and restore files regard to this HEAD to [commitShortName].
+git diff                              ==============> show the diffrance betw loacl and staging area.
+git diff --staged                     ==============> show the diffrance betw staging area and repo.
+git restore --staged [fileName]       ==============> Unstages the specified file, moving it from the staging area back to the working directory. 
+                                                      It does not discard changes in the working directory. [unstage a file but keep the changes in your working directory.] 
+                    				      {Unstages the file but keeps changes in the working directory.} {{restore from Repo.}}
+git restore  [fileName]               ==============> Restores the specified file in the working directory to the state it was in the last commit (or the state in the staging area, if it was staged).
+ 						      [revert the file to its last committed or staged state].
+  						      {Discards changes in the working directory and reverts to last commit.} {{restor from staged area}}.
+##Branchs CL in GIT##
+
+git branch                            ==============> List All Branchs on this Repo.
+git branch [Branch Name]              ==============> create New Branch
+git switch [Branch Name]              ==============> switch to Branch
+git checkout [Branch Name]	      ==============> switch to Branch
+git switch -c [Branch Name]           ==============> craet new branch and switch to it
+git merge [branch Name]               ==============> merge the branch to Master.
+git branch -d [Branch Name]           ==============> remove branch.
+
+##GitHub CL##
+git clone [GitHub Repo SshOrHttp]     ==============> create clone from repo.
+git push                              ==============> upload the last changes to repo.
+git pull                              ==============> Fetches the latest changes from the remote repository and merges them into your current local branch.
+						      - Combines git fetch and git merge into one command.
+                                                      - Updates your local branch with the remote changes.
+git fetch                             ==============> Fetches the latest changes from the remote repository (e.g., GitHub) but does not merge them into your local branches.
+                                                      - Updates your local references to remote branches (e.g., origin/master).
+                                                      - Does not modify your working directory or local branche
+git fetch -p                          ==============> Fetches all barnches.
+git checkout                          ==============> to switch branches or restore files
+git switch                            ==============> switch branches (preferred over git checkout for branch switching).
+git push --set-upstream [BranchName]  ==============> when you use branch in your VS code and need push to Master on GitHub, it craete a barnch on GitHub to push ot it the changes on it and them   {can use git push -u [BranchName]}
+
+git rebase                             ==============> allows you to take commits from one branch and replay them on top of another branch. 
+                                                       - [To incorporate upstream changes: When the master (or main) branch has been updated, and you want to include those changes in your feature branch} [git push --force-with-lease origin feature-branch git push --force-with-lease origin feature-branch]
+                                                       - [To incorporate upstream changes: To squash multiple commits into one or reorder/edit commits for a cleaner history.]
+						       - [To avoid unnecessary merge commits: To maintain a linear history instead of creating merge commits when integrating branches.]
+                  				       - {Git temporarily removes your commits, applies the changes from the target branch, and then reapplies your commits on top.}
+
+git rebase --continue                  ==============> Continue the rebase after solve the conflicted.
+git rebase --abort                     ==============> If you want to cancel the rebase and return to the state before the rebase started.
+ 
