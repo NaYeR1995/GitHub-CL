@@ -31,3 +31,8 @@ POSTGRES_PASSWORD=npg_VxYQ3gL1CaKo
 POSTGRES_DATABASE=neondb
 POSTGRES_URL_NO_SSL=postgres://neondb_owner:npg_VxYQ3gL1CaKo@ep-winter-dawn-a20qv6vj-pooler.eu-central-1.aws.neon.tech/neondb
 POSTGRES_PRISMA_URL=postgres://neondb_owner:npg_VxYQ3gL1CaKo@ep-winter-dawn-a20qv6vj-pooler.eu-central-1.aws.neon.tech/neondb?pgbouncer=true&connect_timeout=15&sslmode=require
+
+
+
+
+https://chatgpt.com/share/679f8f7e-05a0-8000-bc8f-fef655b922d1
